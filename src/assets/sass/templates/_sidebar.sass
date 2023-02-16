@@ -1,0 +1,52 @@
+.sidebar
+  transition: 0.3s
+  height: 100vh
+  width: 100%
+  max-width: 250px
+  &--active
+    max-width: 50px
+    &__show
+      display: none
+    .sidebar--active__hide
+      display: none
+    .sidebar--active__show
+      display: flex
+    .sidebar--active__item
+      padding: 8px
+      display: flex
+      justify-content: center
+    .sidebar__burger__elem
+      &--1, &--2, &--3
+        transform: none
+        display: block
+  &__user
+    &__button
+      &::after
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFFFFF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e")
+      &:not(.collapsed)
+        background: transparent
+        box-shadow: none
+  &__burger
+    cursor: pointer
+    width: 20px
+    height: 16px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    &__elem
+      width: 100%
+      height: 2px
+      background: white
+      transition: 0.3s
+      &--1
+        transform: translateX(-4px) rotate(-45deg)
+        transform-origin: right top
+      &--2
+        display: none
+      &--3
+        transform: translateX(-4px) rotate(45deg)
+        transform-origin: right bottom
+
+#sidenavUserMenu
+  &::-webkit-scrollbar
+    display: none

@@ -1,9 +1,8 @@
 import { createApp } from 'vue'
+import App from './App.vue'
 import store from './store'
 import router from './routes'
-
-//components
-import App from './App.vue'
+import 'tw-elements'
 
 //styles
 import './assets/sass/style.sass'
