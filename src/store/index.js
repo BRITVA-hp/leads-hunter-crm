@@ -1,19 +1,8 @@
 import { createStore } from 'vuex'
+import loader from './others/loader'
 
 export default createStore({
-  state () {
-    return {
-      count: 1
-    }
-  },
-  getters: {
-    stateCount(state) {
-      return state.count
-    }
-  },
-  mutations: {
-    increment (state) {
-      state.count++
-    }
+  modules: {
+    loader
   }
 })
