@@ -1,24 +1,34 @@
 .sidebar
   transition: 0.3s
-  height: 100vh
   width: 100%
-  max-width: 250px
+  height: 55px
+  z-index: 100
+  overflow: hidden
   &--active
-    max-width: 50px
+    height: 100vh
+    .sidebar__item
+      &--first
+        border-bottom: 1px solid rgb(107 114 128)
     &__show
       display: none
-    .sidebar--active__hide
-      display: none
-    .sidebar--active__show
-      display: flex
-    .sidebar--active__item
-      padding: 8px
-      display: flex
-      justify-content: center
     .sidebar__burger__elem
-      &--1, &--2, &--3
-        transform: none
-        display: block
+      &--1
+        transform: translateX(-4px) rotate(-45deg)
+        transform-origin: right top
+      &--2
+        display: none
+      &--3
+        transform: translateX(-4px) rotate(45deg)
+        transform-origin: right bottom
+  &__hover-elem
+    transition: 0.3s
+    opacity: 0
+    visibility: hidden
+  &__hover
+    &:hover
+      .sidebar__hover-elem
+        opacity: 1
+        visibility: visible
   &__user
     &__button
       &::after
@@ -39,14 +49,6 @@
       height: 2px
       background: white
       transition: 0.3s
-      &--1
-        transform: translateX(-4px) rotate(-45deg)
-        transform-origin: right top
-      &--2
-        display: none
-      &--3
-        transform: translateX(-4px) rotate(45deg)
-        transform-origin: right bottom
 
 #sidenavUserMenu, #sidenavProjectSettingsMenu
   &::-webkit-scrollbar

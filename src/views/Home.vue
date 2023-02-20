@@ -1,5 +1,6 @@
 <template>
-  <div class="flex gap-x-8 min-h-screen">
+  <div class="relative pt-16 lg:p-0 lg:flex lg:flex-row gap-y-4 lg:gap-x-8 lg:min-h-screen">
+
     <sidebar-app></sidebar-app>
 
     <section class="w-full">

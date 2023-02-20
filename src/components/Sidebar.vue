@@ -1,9 +1,9 @@
 <template>
   <div
     :class="{ 'sidebar--active' : sidebarActive}"
-    class="sidebar bg-gradient-to-b from-zinc-700 to-zinc-900 text-white">
+    class="sidebar bg-gradient-to-b from-zinc-700 to-zinc-900 text-white absolute left-0 top-0 lg:static">
 
-    <div class="sidebar--active__item flex justify-between items-center p-2.5 border-b border-gray-500">
+    <div class="sidebar__item--first sidebar--active__item flex justify-between items-center p-2.5 lg:border-b lg:border-gray-500">
       <router-link class="sidebar--active__hide" to="/"><img class="w-20" src="../assets/img/logo.svg" alt="leads hunter"></router-link>
       <div
         @click.prevent="sidebarActive = !sidebarActive"
@@ -18,9 +18,38 @@
       :class="{'hover:bg-zinc-600 duration-300' : sidebarActive}"
       class="sidebar--active__item accordion" id="sidenavUser">
 
-      <router-link to="/" class="sidebar--active__show w-10 h-10 overflow-hidden flex justify-center items-center hover:bg-zinc-600 duration-300">
-        <img src="../assets/img/avatar-default.png" alt="avatar">
-      </router-link>
+      <div class="sidebar--active__show sidebar__hover cursor-pointer relative w-12 h-12 flex justify-center items-center hover:bg-zinc-600 duration-300 p-2">
+        <img class="block" src="../assets/img/avatar-default.png" alt="avatar">
+
+        <div class="sidebar__hover-elem absolute left-full top-0 bg-zinc-700">
+          <ul class="p-2.5 text-gray-100">
+            <li>
+              <router-link class="flex items-center gap-1.5 w-full text-sm leading-none hover:bg-zinc-600 p-1.5 duration-300 rounded" to="/">
+              <span class="material-icons-outlined">
+              account_circle
+              </span>
+                <span>Профиль</span>
+              </router-link>
+            </li>
+            <li>
+              <router-link class="flex items-center gap-1.5 w-full text-sm leading-none hover:bg-zinc-600 p-1.5 duration-300 rounded" to="/">
+              <span class="material-icons-outlined">
+              manage_accounts
+              </span>
+                <span>Настройки аккаунта</span>
+              </router-link>
+            </li>
+            <li>
+              <router-link class="flex items-center gap-1.5 w-full text-sm leading-none hover:bg-zinc-600 p-1.5 duration-300 rounded" to="/">
+              <span class="material-icons-outlined">
+              logout
+              </span>
+                <span>Выйти</span>
+              </router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
 
       <button class="
         accordion-button
@@ -93,7 +122,8 @@
         gap-x-2.5
         border-gray-500 hover:bg-zinc-600
         duration-300
-        justify-center"
+        justify-center
+        p-2"
         type="button"
         id="sidenavProjectsButton"
         data-bs-toggle="dropdown"
@@ -148,7 +178,9 @@
           dropdown-menu
           bg-zinc-500
           shadow-xl
-          max-w-xs
+          w-full
+          lg:w-auto
+          lg:max-w-xs
           absolute
           hidden
           max-h-80
@@ -254,19 +286,26 @@
       <router-link to="/"
         class="
         sidebar--active__show
-        p-2.5
+        sidebar__hover
+        relative
+        p-2
         border-gray-500
         w-full
         flex
         items-center
-        justify-center">
+        justify-center
+        ">
         <span class="material-icons-outlined">list_alt</span>
+
+        <div class="sidebar__hover-elem absolute left-full top-0 bg-zinc-700 h-full hover:bg-zinc-600">
+          <router-link to="#" class="h-full flex items-center px-4">ЕЖЛ</router-link>
+        </div>
       </router-link>
     </div>
 
     <div class="hover:bg-zinc-600 duration-300">
       <router-link to="/"
-                   class="
+       class="
         sidebar--active__hide
         p-2.5
         border-b
@@ -280,8 +319,10 @@
         <span>Лог</span>
       </router-link>
       <router-link to="/"
-                   class="
+         class="
         sidebar--active__show
+        sidebar__hover
+        relative
         p-2.5
         border-gray-500
         w-full
@@ -289,6 +330,10 @@
         items-center
         justify-center">
         <span class="material-icons-outlined">sort</span>
+
+        <div class="sidebar__hover-elem absolute left-full top-0 bg-zinc-700 h-full hover:bg-zinc-600">
+          <router-link to="#" class="h-full flex items-center px-4">Лог</router-link>
+        </div>
       </router-link>
     </div>
 
@@ -296,9 +341,31 @@
       :class="{'hover:bg-zinc-600 duration-300' : sidebarActive}"
       class="sidebar--active__item accordion" id="sidenavProjectSettings">
 
-      <router-link to="/" class="sidebar--active__show w-10 h-10 overflow-hidden flex justify-center items-center hover:bg-zinc-600 duration-300">
-        <img src="../assets/img/avatar-default.png" alt="avatar">
-      </router-link>
+      <div class="sidebar--active__show sidebar__hover relative cursor-pointer p-2.5 flex items-center justify-center">
+        <span class="material-icons-outlined">
+        settings
+        </span>
+
+        <div class="sidebar__hover-elem absolute left-full top-0 bg-zinc-700">
+          <ul class="p-2.5 text-gray-100">
+            <li>
+              <router-link class="flex items-center gap-1.5 w-full text-sm leading-none hover:bg-zinc-600 p-1.5 duration-300 rounded" to="/">
+                Основное
+              </router-link>
+            </li>
+            <li>
+              <router-link class="flex items-center gap-1.5 w-full text-sm leading-none hover:bg-zinc-600 p-1.5 duration-300 rounded" to="/">
+                Синхронизации
+              </router-link>
+            </li>
+            <li>
+              <router-link class="flex items-center gap-1.5 w-full text-sm leading-none hover:bg-zinc-600 p-1.5 duration-300 rounded" to="/">
+                Интеграция
+              </router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
 
       <button class="
         accordion-button
@@ -314,11 +381,11 @@
         border-gray-500
         hover:bg-zinc-600
         duration-300"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#sidenavProjectSettingsMenu"
-              aria-expanded="false"
-              aria-controls="sidenavProjectSettingsMenu">
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidenavProjectSettingsMenu"
+        aria-expanded="false"
+        aria-controls="sidenavProjectSettingsMenu">
 
         <span class="material-icons-outlined">
         settings

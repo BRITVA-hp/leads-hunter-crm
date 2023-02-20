@@ -1,0 +1,28 @@
+@media screen and (min-width: 1024px)
+  .sidebar
+    height: 100vh
+    max-width: 250px
+    overflow: visible
+    &--active
+      max-width: 50px
+      .sidebar--active__hide
+        display: none
+      .sidebar--active__show
+        display: flex
+      .sidebar--active__item
+        display: flex
+        justify-content: center
+      .sidebar__burger__elem
+        &--1, &--2, &--3
+          transform: none
+          display: block
+    &__burger
+      &__elem
+        &--1
+          transform: translateX(-4px) rotate(-45deg)
+          transform-origin: right top
+        &--2
+          display: none
+        &--3
+          transform: translateX(-4px) rotate(45deg)
+          transform-origin: right bottom
