@@ -16,7 +16,7 @@
 
     <div
       :class="{'hover:bg-zinc-600 duration-300' : sidebarActive}"
-      class="sidebar--active__item accordion" id="sidenavUser">
+      class="sidebar--active__item" id="sidenavUser">
 
       <div class="sidebar--active__show sidebar__hover cursor-pointer relative w-12 h-12 flex justify-center items-center hover:bg-zinc-600 duration-300 p-2">
         <img class="block" src="../assets/img/avatar-default.png" alt="avatar">
@@ -51,34 +51,38 @@
         </div>
       </div>
 
-      <button class="
-        accordion-button
-        collapsed
-        sidebar__user__button
-        sidebar--active__hide
-        w-full
-        flex
-        items-center
-        gap-x-2.5
-        p-2.5
-        border-b
-        border-gray-500
-        hover:bg-zinc-600
-        duration-300"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#sidenavUserMenu"
-        aria-expanded="false"
-        aria-controls="sidenavUserMenu">
+      <div class="accordion-header" id="sidenavUserHeader">
+        <button class="
+          relative
+          collapsed
+          sidebar__user__button
+          sidebar--active__hide
+          w-full
+          flex
+          items-center
+          gap-x-2.5
+          p-2.5
+          border-b
+          border-gray-500
+          hover:bg-zinc-600
+          duration-300"
+          type="button"
+          data-bs-target="#sidenavUserMenu"
+          aria-expanded="false"
+          aria-controls="sidenavUserMenu"
+          data-te-collapse-collapsed
+          data-te-collapse-init>
 
-        <div class="w-10 h-10 overflow-hidden flex justify-center items-center">
-          <img src="../assets/img/avatar-default.png" alt="avatar">
-        </div>
+          <div class="w-10 h-10 overflow-hidden flex justify-center items-center">
+            <img src="../assets/img/avatar-default.png" alt="avatar">
+          </div>
 
-        <p class="text-ellipsis overflow-hidden whitespace-nowrap">Тестовый пользователь</p>
-      </button>
-      <div id="sidenavUserMenu" class="sidebar--active__hide accordion-collapse collapse max-h-80 overflow-auto border-b border-gray-500"
-           data-bs-parent="#sidenavUser">
+          <p class="text-ellipsis overflow-hidden whitespace-nowrap">Тестовый пользователь</p>
+        </button>
+      </div>
+
+      <div id="sidenavUserMenu" class="sidebar--active__hide accordion-collapse collapse max-h-80 overflow-auto border-b border-gray-500 !visible hidden"
+           data-bs-parent="#sidenavUser" data-te-collapse-item aria-labelledby="sidenavUserHeader" data-te-parent="#sidenavUser">
         <ul class="p-2.5 text-gray-100">
           <li>
               <router-link class="flex items-center gap-1.5 w-full text-sm leading-none hover:bg-zinc-600 p-1.5 duration-300 rounded" to="/">
@@ -110,12 +114,11 @@
 
     <div
       :class="{ 'hover:bg-zinc-600 duration-300' : sidebarActive }"
-      class="sidebar--active__item dropdown relative">
+      class="sidebar--active__item relative" data-te-dropdown-ref>
 
       <button
         class="
         sidebar--active__show
-        dropdown-toggle
         w-full
         flex
         items-center
@@ -126,8 +129,8 @@
         p-2"
         type="button"
         id="sidenavProjectsButton"
-        data-bs-toggle="dropdown"
-        aria-expanded="false">
+        aria-expanded="false"
+        data-te-dropdown-toggle-ref>
 
         <span class="material-icons-outlined">
         format_list_bulleted
@@ -136,7 +139,6 @@
 
       <button
         class="
-        dropdown-toggle
         w-full
         flex
         items-center
@@ -149,8 +151,8 @@
         sidebar--active__hide"
         type="button"
         id="sidenavProjectsButton"
-        data-bs-toggle="dropdown"
-        aria-expanded="false">
+        aria-expanded="false"
+        data-te-dropdown-toggle-ref>
 
         <span class="material-icons-outlined">
         format_list_bulleted
@@ -175,7 +177,7 @@
       </button>
       <ul id="sidenavProjectsList"
           class="
-          dropdown-menu
+          [&[data-te-dropdown-show]]:block
           bg-zinc-500
           shadow-xl
           w-full
@@ -188,8 +190,9 @@
           border
           border-gray-500
           p-2
-          text-gray-100"
-           aria-labelledby="sidenavProjectsButton">
+          text-gray-100
+          z-10"
+           aria-labelledby="sidenavProjectsButton" data-te-dropdown-menu-ref>
         <li class="dropdown-item">
           <router-link class="block w-full text-sm leading-none hover:bg-zinc-700 p-1.5 duration-300 rounded text-ellipsis overflow-hidden whitespace-nowrap" to="/">
             1. Ещё проект
