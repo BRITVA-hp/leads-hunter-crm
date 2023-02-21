@@ -19,7 +19,7 @@ api.interceptors.request.use( config => {
 
 // End Request
 
-api.interceptors.request.use( config => {
+api.interceptors.response.use( config => {
     if (localStorage.getItem('access_token') ){
         config.headers.authorization = `Bearer ${localStorage.getItem('access_token')}`
     }
