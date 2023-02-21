@@ -48,6 +48,7 @@
         <!--          <label for="remember-me" class="cursor-pointer ml-2 block text-sm">Запомнить меня</label>-->
         <!--        </div>-->
         <button
+            @click = login
           class="bg-red-800 inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg transition duration-150 ease-in-out w-full mb-3 mt-3"
           type="submit"
         >
@@ -61,6 +62,8 @@
 <script>
 import { useVuelidate } from '@vuelidate/core'
 import { required, email } from '@vuelidate/validators'
+import authLogin from '../services/auth/login'
+import login from "../services/auth/login";
 
 export default {
   name: "Login",
@@ -78,6 +81,10 @@ export default {
     async login() {
       const result = await this.v$.$validate()
       if (!result) return
+      await  authLogin(this.email,this.password)
+          .then( response => {
+            localStorage.access_token = response.token
+          } )
     }
   },
   validations () {
