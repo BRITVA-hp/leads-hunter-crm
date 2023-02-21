@@ -99,6 +99,7 @@
 
 <script>
 import productsService from "../../services/getProjects";
+import API from "../../services/auth/api";
 
 export default {
   name: "Projects",
@@ -114,6 +115,11 @@ export default {
     //     .then(response => {
     //       console.log(response)
     //     })
+    API.get('v2/dashboard').then(
+        response => {
+          console.log(response)
+        }
+    )
   }
 }
 </script>
