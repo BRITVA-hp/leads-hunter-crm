@@ -51,38 +51,37 @@
         </div>
       </div>
 
-      <div class="accordion-header" id="sidenavUserHeader">
-        <button class="
-          relative
-          collapsed
-          sidebar__user__button
-          sidebar--active__hide
-          w-full
-          flex
-          items-center
-          gap-x-2.5
-          p-2.5
-          border-b
-          border-gray-500
-          hover:bg-zinc-600
-          duration-300"
-          type="button"
-          data-bs-target="#sidenavUserMenu"
-          aria-expanded="false"
-          aria-controls="sidenavUserMenu"
-          data-te-collapse-collapsed
-          data-te-collapse-init>
+      <button class="
+        group
+        relative
+        collapsed
+        sidebar__user__button
+        sidebar--active__hide
+        w-full
+        flex
+        items-center
+        gap-x-2.5
+        p-2.5
+        border-b
+        border-gray-500
+        hover:bg-zinc-600
+        duration-300"
+        type="button"
+        data-te-collapse-collapsed
+        data-te-collapse-init
+        data-te-target="#sidenavUserMenu"
+        aria-expanded="false"
+        aria-controls="sidenavUserMenu">
 
-          <div class="w-10 h-10 overflow-hidden flex justify-center items-center">
-            <img src="../assets/img/avatar-default.png" alt="avatar">
-          </div>
+        <div class="w-10 h-10 overflow-hidden flex justify-center items-center">
+          <img src="../assets/img/avatar-default.png" alt="avatar">
+        </div>
 
-          <p class="text-ellipsis overflow-hidden whitespace-nowrap">Тестовый пользователь</p>
-        </button>
-      </div>
+        <p class="text-ellipsis overflow-hidden whitespace-nowrap">Тестовый пользователь</p>
+      </button>
 
-      <div id="sidenavUserMenu" class="sidebar--active__hide accordion-collapse collapse max-h-80 overflow-auto border-b border-gray-500 !visible hidden"
-           data-bs-parent="#sidenavUser" data-te-collapse-item aria-labelledby="sidenavUserHeader" data-te-parent="#sidenavUser">
+      <div id="sidenavUserMenu" data-te-collapse-item class="!visible hidden sidebar--active__hide data-te-collapse-item max-h-80 border-b border-gray-500"
+           data-bs-parent="#sidenavUser" aria-labelledby="sidenavUserHeader" data-te-parent="#sidenavUser">
         <ul class="p-2.5 text-gray-100">
           <li>
               <router-link class="flex items-center gap-1.5 w-full text-sm leading-none hover:bg-zinc-600 p-1.5 duration-300 rounded" to="/">
