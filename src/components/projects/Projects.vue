@@ -53,47 +53,6 @@
       </table>
     </div>
 
-      <button
-          class="group relative flex w-full items-center border-0 bg-white py-4 px-5 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3]"
-          type="button"
-          data-te-collapse-init
-          data-te-collapse-collapsed
-          data-te-target="#collapseThree"
-          aria-expanded="false"
-          aria-controls="collapseThree">
-        Accordion Item #3
-        <span
-            class="ml-auto -mr-1 h-5 w-5 shrink-0 rotate-[-180deg] fill-[#336dec] transition-transform duration-200 ease-in-out group-[[data-te-collapse-collapsed]]:mr-0 group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white">
-          <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="h-6 w-6">
-            <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-          </svg>
-        </span>
-      </button>
-      <div
-          id="collapseThree"
-          class="!visible hidden"
-          data-te-collapse-item>
-        <div class="py-4 px-5">
-          <strong>This is the third item's accordion body.</strong> It is
-          hidden by default, until the collapse plugin adds the appropriate
-          classes that we use to style each element. These classes control
-          the overall appearance, as well as the showing and hiding via CSS
-          transitions. You can modify any of this with custom CSS or
-          overriding our default variables. It's also worth noting that just
-          about any HTML can go within the <code>.accordion-body</code>,
-          though the transition does limit overflow.
-        </div>
-      </div>
-
   </div>
 </template>
 
