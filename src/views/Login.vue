@@ -49,7 +49,7 @@
         <!--        </div>-->
         <button
             @click = login
-          class="bg-red-800 inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg transition duration-150 ease-in-out w-full mb-3 mt-3"
+          class="bg-red-800 inline-block px-6 py-2.5 text-white font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg transition duration-150 ease-in-out w-full mb-3 mt-3"
           type="submit"
         >
           Войти
@@ -81,9 +81,10 @@ export default {
     async login() {
       const result = await this.v$.$validate()
       if (!result) return
-      await  authLogin(this.email,this.password)
+      await authLogin(this.email, this.password)
           .then( response => {
             localStorage.access_token = response.token
+            this.$router.push('/')
           } )
     }
   },

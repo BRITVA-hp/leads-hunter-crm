@@ -1,5 +1,5 @@
 <template>
-  <div class="relative pt-16 lg:p-0 lg:flex lg:flex-row gap-y-4 lg:gap-x-4 lg:min-h-screen">
+  <div class="relative pt-16 lg:p-0 lg:flex lg:flex-row gap-y-4 lg:gap-x-4 lg:h-screen">
 
     <sidebar-app></sidebar-app>
 
