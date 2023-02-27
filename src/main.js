@@ -3,6 +3,7 @@ import App from './App.vue'
 import store from './store'
 import router from './routes'
 import 'tw-elements'
+import 'flowbite'
 
 //styles
 import './assets/sass/style.sass'

@@ -1,22 +1,16 @@
+<script setup>
+import ProjectsApp from "../components/projects/Projects.vue";
+</script>
+
 <template>
-  <div class="relative pt-16 lg:p-0 lg:flex lg:flex-row gap-y-4 lg:gap-x-4 lg:h-screen">
-
-    <sidebar-app></sidebar-app>
-
-    <projects-app></projects-app>
-  </div>
+  <projects-app></projects-app>
 </template>
 
 <script>
-import SidebarApp from "../components/Sidebar.vue";
-import ProjectsApp from "../components/projects/Projects.vue";
+
 
 export default {
   name: "Home",
-  components: {
-    SidebarApp,
-    ProjectsApp
-  }
 }
 </script>
 

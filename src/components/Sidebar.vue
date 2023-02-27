@@ -285,7 +285,7 @@
       </ul>
     </div>
 
-    <div class="hover:bg-zinc-600 duration-300">
+    <div v-if="$route.name !== 'home'" class="hover:bg-zinc-600 duration-300">
       <router-link to="/"
         class="
         sidebar--active__hide
@@ -320,7 +320,7 @@
       </router-link>
     </div>
 
-    <div class="hover:bg-zinc-600 duration-300">
+    <div v-if="$route.name !== 'home'" class="hover:bg-zinc-600 duration-300">
       <router-link to="/"
        class="
         sidebar--active__hide
@@ -355,9 +355,9 @@
     </div>
 
     <div
+        v-if="$route.name !== 'home'"
       :class="{'hover:bg-zinc-600 duration-300' : sidebarActive}"
       class="sidebar--active__item accordion" id="sidenavProjectSettings">
-
       <div class="sidebar--active__show sidebar__hover relative cursor-pointer p-2.5 flex items-center justify-center">
         <span class="material-icons-outlined">
         settings

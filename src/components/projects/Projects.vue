@@ -1,7 +1,6 @@
 <template>
   <div class="w-full p-3 overflow-auto">
-
-    <div v-if="projects">
+    <div v-show="projects">
       <div class="mb-2">
         <input type="text" placeholder="Поиск пректов" class="form-input border-slate-300 text-sm rounded">
       </div>
@@ -65,9 +64,9 @@
       </div>
     </div>
 
-    <div v-else>
-      <p class="text-center font-semibold ">Нет ни одного проекта</p>
-    </div>
+<!--    <div v-else>-->
+<!--      <p class="text-center font-semibold ">Нет ни одного проекта</p>-->
+<!--    </div>-->
 
   </div>
 </template>
