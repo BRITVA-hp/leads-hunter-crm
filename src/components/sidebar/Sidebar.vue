@@ -1,10 +1,14 @@
+<script setup>
+import SidebarProjects from "./SidebarProjects.vue";
+</script>
+
 <template>
   <div
     :class="{ 'sidebar--active' : sidebarActive}"
     class="sidebar bg-gradient-to-b from-zinc-700 to-zinc-900 text-white absolute left-0 top-0 lg:static">
 
     <div class="sidebar__item--first sidebar--active__item flex justify-between items-center p-2.5 lg:border-b lg:border-gray-500">
-      <router-link class="sidebar--active__hide" to="/"><img class="w-20" src="../assets/img/logo.svg" alt="leads hunter"></router-link>
+      <router-link class="sidebar--active__hide" to="/"><img class="w-20" src="../../assets/img/logo.svg" alt="leads hunter"></router-link>
       <div
         @click.prevent="sidebarActive = !sidebarActive"
         class="sidebar__burger">
@@ -19,7 +23,7 @@
       class="sidebar--active__item" id="sidenavUser">
 
       <div class="sidebar--active__show sidebar__hover cursor-pointer relative w-12 h-12 flex justify-center items-center hover:bg-zinc-600 duration-300 p-2">
-        <img class="block" src="../assets/img/avatar-default.png" alt="avatar">
+        <img class="block" src="../../assets/img/avatar-default.png" alt="avatar">
 
         <div class="sidebar__hover-elem absolute left-full top-0 bg-zinc-700">
           <ul class="p-2.5 text-gray-100">
@@ -73,7 +77,7 @@
         aria-controls="sidenavUserMenu">
 
         <div class="w-10 h-10 overflow-hidden flex justify-center items-center">
-          <img src="../assets/img/avatar-default.png" alt="avatar">
+          <img src="../../assets/img/avatar-default.png" alt="avatar">
         </div>
 
         <p class="text-ellipsis overflow-hidden whitespace-nowrap">Тестовый пользователь</p>
@@ -189,100 +193,7 @@
           ></path>
         </svg>
       </button>
-      <ul id="sidenavProjectsList"
-          class="
-          [&[data-te-dropdown-show]]:block
-          bg-zinc-500
-          shadow-xl
-          w-full
-          lg:w-auto
-          lg:max-w-xs
-          absolute
-          hidden
-          max-h-80
-          overflow-auto
-          border
-          border-gray-500
-          p-2
-          text-gray-100
-          z-10"
-           aria-labelledby="sidenavProjectsButton" data-te-dropdown-menu-ref>
-        <li class="dropdown-item">
-          <router-link class="block w-full text-sm leading-none hover:bg-zinc-700 p-1.5 duration-300 rounded text-ellipsis overflow-hidden whitespace-nowrap" to="/">
-            1. Ещё проект
-          </router-link>
-        </li>
-        <li class="dropdown-item">
-          <router-link class="block w-full text-sm leading-none hover:bg-zinc-700 p-1.5 duration-300 rounded text-ellipsis overflow-hidden whitespace-nowrap" to="/">
-            2. И ещё проект вапрапр вапвап вапва вапвап вапеукеукеуке упвап
-          </router-link>
-        </li>
-        <li class="dropdown-item">
-          <router-link class="block w-full text-sm leading-none hover:bg-zinc-700 p-1.5 duration-300 rounded text-ellipsis overflow-hidden whitespace-nowrap" to="/">
-            3. И ещё проект вапрапр вапвап вапва вапвап вапеукеукеуке упвап
-          </router-link>
-        </li>
-        <li class="dropdown-item">
-          <router-link class="block w-full text-sm leading-none hover:bg-zinc-700 p-1.5 duration-300 rounded text-ellipsis overflow-hidden whitespace-nowrap" to="/">
-            4. И ещё проект вапрапр вапвап вапва вапвап вапеукеукеуке упвап
-          </router-link>
-        </li>
-        <li class="dropdown-item">
-          <router-link class="block w-full text-sm leading-none hover:bg-zinc-700 p-1.5 duration-300 rounded text-ellipsis overflow-hidden whitespace-nowrap" to="/">
-            5. И ещё проект вапрапр вапвап вапва вапвап вапеукеукеуке упвап
-          </router-link>
-        </li>
-        <li class="dropdown-item">
-          <router-link class="block w-full text-sm leading-none hover:bg-zinc-700 p-1.5 duration-300 rounded text-ellipsis overflow-hidden whitespace-nowrap" to="/">
-            6. И ещё проект вапрапр вапвап вапва вапвап вапеукеукеуке упвап
-          </router-link>
-        </li>
-        <li class="dropdown-item">
-          <router-link class="block w-full text-sm leading-none hover:bg-zinc-700 p-1.5 duration-300 rounded text-ellipsis overflow-hidden whitespace-nowrap" to="/">
-            7. И ещё проект вапрапр вапвап вапва вапвап вапеукеукеуке упвап
-          </router-link>
-        </li>
-        <li class="dropdown-item">
-          <router-link class="block w-full text-sm leading-none hover:bg-zinc-700 p-1.5 duration-300 rounded text-ellipsis overflow-hidden whitespace-nowrap" to="/">
-            8. И ещё проект вапрапр вапвап вапва вапвап вапеукеукеуке упвап
-          </router-link>
-        </li>
-        <li class="dropdown-item">
-          <router-link class="block w-full text-sm leading-none hover:bg-zinc-700 p-1.5 duration-300 rounded text-ellipsis overflow-hidden whitespace-nowrap" to="/">
-            9. И ещё проект вапрапр вапвап вапва вапвап вапеукеукеуке упвап
-          </router-link>
-        </li>
-        <li class="dropdown-item">
-          <router-link class="block w-full text-sm leading-none hover:bg-zinc-700 p-1.5 duration-300 rounded text-ellipsis overflow-hidden whitespace-nowrap" to="/">
-            10. И ещё проект вапрапр вапвап вапва вапвап вапеукеукеуке упвап
-          </router-link>
-        </li>
-        <li class="dropdown-item">
-          <router-link class="block w-full text-sm leading-none hover:bg-zinc-700 p-1.5 duration-300 rounded text-ellipsis overflow-hidden whitespace-nowrap" to="/">
-            11. И ещё проект вапрапр вапвап вапва вапвап вапеукеукеуке упвап
-          </router-link>
-        </li>
-        <li class="dropdown-item">
-          <router-link class="block w-full text-sm leading-none hover:bg-zinc-700 p-1.5 duration-300 rounded text-ellipsis overflow-hidden whitespace-nowrap" to="/">
-            12. И ещё проект вапрапр вапвап вапва вапвап вапеукеукеуке упвап
-          </router-link>
-        </li>
-        <li class="dropdown-item">
-          <router-link class="block w-full text-sm leading-none hover:bg-zinc-700 p-1.5 duration-300 rounded text-ellipsis overflow-hidden whitespace-nowrap" to="/">
-            13. И ещё проект вапрапр вапвап вапва вапвап вапеукеукеуке упвап
-          </router-link>
-        </li>
-        <li class="dropdown-item">
-          <router-link class="block w-full text-sm leading-none hover:bg-zinc-700 p-1.5 duration-300 rounded text-ellipsis overflow-hidden whitespace-nowrap" to="/">
-            14. И ещё проект вапрапр вапвап вапва вапвап вапеукеукеуке упвап
-          </router-link>
-        </li>
-        <li class="dropdown-item">
-          <router-link class="block w-full text-sm leading-none hover:bg-zinc-700 p-1.5 duration-300 rounded text-ellipsis overflow-hidden whitespace-nowrap" to="/">
-            15. И ещё проект вапрапр вапвап вапва вапвап вапеукеукеуке упвап
-          </router-link>
-        </li>
-      </ul>
+      <sidebar-projects></sidebar-projects>
     </div>
 
     <div v-if="$route.name !== 'home'" class="hover:bg-zinc-600 duration-300">
