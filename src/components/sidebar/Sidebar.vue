@@ -133,7 +133,7 @@ import SidebarProjects from "./SidebarProjects.vue";
 <!--    projects-->
     <div
       :class="{ 'hover:bg-zinc-600 duration-300' : sidebarActive }"
-      class="sidebar--active__item relative" data-te-dropdown-ref>
+      class="sidebar--active__item relative">
 
       <button
         class="
