@@ -5,12 +5,12 @@ import SidebarProjects from "./SidebarProjects.vue";
 <template>
   <div
     :class="{ 'sidebar--active' : sidebarActive}"
-    class="sidebar bg-gradient-to-b from-zinc-700 to-zinc-900 text-white absolute left-0 top-0 lg:static">
+    class="sidebar bg-gradient-to-b from-zinc-700 to-zinc-900 text-white absolute left-0 top-0 lg:static overflow-auto">
 
     <div class="sidebar__item--first sidebar--active__item flex justify-between items-center p-2.5 lg:border-b lg:border-gray-500">
       <router-link class="sidebar--active__hide" to="/"><img class="w-20" src="../../assets/img/logo.svg" alt="leads hunter"></router-link>
       <div
-        @click.prevent="sidebarActive = !sidebarActive"
+        @click.prevent="sidebar"
         class="sidebar__burger">
         <div class="sidebar__burger__elem sidebar__burger__elem--1"></div>
         <div class="sidebar__burger__elem sidebar__burger__elem--2"></div>
@@ -372,6 +372,12 @@ export default {
   data() {
     return {
       sidebarActive: false
+    }
+  },
+  methods: {
+    sidebar() {
+      this.sidebarActive = !this.sidebarActive
+      this.sidebarActive ? document.body.classList.add('body__sidebar-active') : document.body.classList.remove('body__sidebar-active')
     }
   }
 }
