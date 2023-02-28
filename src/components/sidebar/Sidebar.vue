@@ -130,6 +130,7 @@ import SidebarProjects from "./SidebarProjects.vue";
       </div>
     </div>
 
+<!--    projects-->
     <div
       :class="{ 'hover:bg-zinc-600 duration-300' : sidebarActive }"
       class="sidebar--active__item relative" data-te-dropdown-ref>
@@ -147,8 +148,7 @@ import SidebarProjects from "./SidebarProjects.vue";
         p-2"
         type="button"
         id="sidenavProjectsButton"
-        aria-expanded="false"
-        data-te-dropdown-toggle-ref>
+        data-dropdown-toggle="sidenavProjectsMenu" data-dropdown-placement="bottom">
 
         <span class="material-icons-outlined">
         format_list_bulleted
@@ -169,14 +169,13 @@ import SidebarProjects from "./SidebarProjects.vue";
         sidebar--active__hide"
         type="button"
         id="sidenavProjectsButton"
-        aria-expanded="false"
-        data-te-dropdown-toggle-ref>
+        data-dropdown-toggle="sidenavProjectsMenu" data-dropdown-placement="bottom">
 
         <span class="material-icons-outlined">
         format_list_bulleted
         </span>
 
-        <p class="text-ellipsis overflow-hidden whitespace-nowrap sidebar--active__hide">Тестовый проект dsfg dfs</p>
+        <p class="text-ellipsis overflow-hidden whitespace-nowrap sidebar--active__hide">{{ $route.name === 'home' ? 'Все проекты' : '' }}</p>
         <svg
           aria-hidden="true"
           focusable="false"
@@ -193,7 +192,7 @@ import SidebarProjects from "./SidebarProjects.vue";
           ></path>
         </svg>
       </button>
-      <sidebar-projects></sidebar-projects>
+      <sidebar-projects :projects="projects"></sidebar-projects>
     </div>
 
     <div v-if="$route.name !== 'home'" class="hover:bg-zinc-600 duration-300">
@@ -265,8 +264,7 @@ import SidebarProjects from "./SidebarProjects.vue";
       </router-link>
     </div>
 
-    <div
-        v-if="$route.name !== 'home'"
+    <div v-if="$route.name !== 'home'"
       :class="{'hover:bg-zinc-600 duration-300' : sidebarActive}"
       class="sidebar--active__item accordion" id="sidenavProjectSettings">
       <div class="sidebar--active__show sidebar__hover relative cursor-pointer p-2.5 flex items-center justify-center">
@@ -366,6 +364,11 @@ import SidebarProjects from "./SidebarProjects.vue";
 <script>
 export default {
   name: "Sidebar",
+  props: {
+    projects: {
+      required: true
+    }
+  },
   data() {
     return {
       sidebarActive: false

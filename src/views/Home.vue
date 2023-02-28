@@ -5,18 +5,33 @@ import SidebarApp from "../components/sidebar/Sidebar.vue";
 
 <template>
   <div class="relative pt-16 lg:p-0 lg:flex lg:flex-row gap-y-4 lg:gap-x-4 lg:h-screen">
-    <sidebar-app></sidebar-app>
-    <projects-app></projects-app>
+    <sidebar-app :projects="projects"></sidebar-app>
+    <projects-app v-if="projects" :projects="projects"></projects-app>
   </div>
 </template>
 
 <script>
+import API from "@/services/auth/api";
 
 export default {
   name: "Home",
-  async mounted() {
+  data() {
+    return {
+      projects: null
+    }
+  },
+  async created() {
     this.$store.commit('loader/LOADER_TRUE')
-    await this.$store.dispatch('projects/getProjects')
+    await API.get('v2/dashboard')
+        .then(
+            response => {
+              this.projects = response.data.data
+              console.log(response)
+            }
+        )
+        .catch(error => {
+          console.log(error)
+        })
     this.$store.commit('loader/LOADER_FALSE')
   }
 }
