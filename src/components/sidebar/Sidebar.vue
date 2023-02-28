@@ -5,7 +5,7 @@ import SidebarProjects from "./SidebarProjects.vue";
 <template>
   <div
     :class="{ 'sidebar--active' : sidebarActive}"
-    class="sidebar bg-gradient-to-b from-zinc-700 to-zinc-900 text-white absolute left-0 top-0 lg:static overflow-auto">
+    class="sidebar bg-gradient-to-b from-zinc-700 to-zinc-900 text-white absolute left-0 top-0 lg:static">
 
     <div class="sidebar__item--first sidebar--active__item flex justify-between items-center p-2.5 lg:border-b lg:border-gray-500">
       <router-link class="sidebar--active__hide" to="/"><img class="w-20" src="../../assets/img/logo.svg" alt="leads hunter"></router-link>
